@@ -41,7 +41,11 @@
 
 <!-- Your community, and what your classifier sorts posts into. Three or four
      sentences. -->
-
+Community: Hacker News posts that use the word "flooding." On HN the word
+rarely means water. It more often describes a market, a platform, or an
+information space being overwhelmed. My classifier sorts each post by which
+sense of "flooding" it uses: `PHYSICAL_WATER_FLOOD` (Actual water flooding, extreme rain, coastal flooding, or flood events), `COMMERCIAL_OR_PLATFORM_SATURATION` (Too many products, apps, ads, or commercial listings on a platform or market), `SOCIAL_OR_ECONOMIC_INFLUX` (a surge of people,
+money, labor, investors, or applications), and `DIGITAL_OR_INFORMATION` (Disinformation, spam, bots, scams, fake content, or online systems being overwhelmed)
 
 
 ---
