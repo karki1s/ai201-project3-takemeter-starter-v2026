@@ -58,35 +58,56 @@ money, labor, investors, or applications), and `DIGITAL_OR_INFORMATION` (Disinfo
      The decision rule is worth a point on its own and it's the thing most
      people leave out. Every taxonomy has a hardest boundary. Name yours. -->
 
-### `label_one`
+### `PHYSICAL_WATER_FLOOD`
 
 **Definition:**
-
+A post describing water overflowing, covering, or inundating land or places, usually because of heavy rainfall, rivers, storms, coastal surges, or other water-related events. Includes actual flooding, flood warnings, and predictions of flooding.
 **Example 1:**
->
+> Flooding of US Coast, Caused by Global Warming, Has Begun 
 
 **Example 2:**
->
+> China's Three Gorges Dam could collapse (flooding 400M)
 
-### `label_two`
+### `COMMERCIAL_OR_PLATFORM_SATURATION`
 
 **Definition:**
+A post describing a large quantity of products, advertisements, listings, or commercial content entering a marketplace or online platform, potentially overwhelming users, reducing quality, or making it difficult to find legitimate products.
 
 **Example 1:**
->
+> Cheap junk flooding Amazon has brand names like MOFFBUZW 
+**Example 2:**
+> Meta Is Flooding the Market with Smartglasses. Privacy Advocates Are Up in Arms 
+
+### `SOCIAL_OR_ECONOMIC_INFLUX`
+
+**Definition:**
+A post describing a large or sudden increase in people, workers, migrants, investors, money, applications, or other social or economic activity entering a place, organization, or system, often with an emphasis on its effects or perceived burden.
+**Example 1:**
+> AI note takers are flooding Zoom calls as workers opt to skip meetings 
 
 **Example 2:**
->
+> Money Flooding Out of Canada at Fastest Pace in Developed World 
+
+### `DIGITAL_OR_INFORMATION`
+
+**Definition:**
+A post describing a large or overwhelming amount of digital content or information being distributed, such as disinformation, misinformation, spam, bots, fake news, or online messages. The term “flooding” is used metaphorically to describe the spread or volume of information.
+
+**Example 1:**
+> China is flooding Taiwan with disinformation 
+
+**Example 2:**
+> Please stop flooding our projects with AI slop to furnish your CV 
 
 ### The hardest boundary
 
 **Which two labels:**
+DIGITAL_OR_INFORMATION and COMMERCIAL_OR_PLATFORM_SATURATION
 
 **The decision rule I used every time:**
 <!-- e.g. "If the post names a specific checkable fact, it's `analysis`, even
      if the tone is heated." -->
-
-
+Those two are the hardest boundary since for example if the post contains something like amazon, products, ads, or disinformation. My decision rule is label the post according to what is being flooded: information/content or commercial products/listings. 
 
 ---
 
