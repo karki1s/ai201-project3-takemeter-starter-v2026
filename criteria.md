@@ -54,11 +54,11 @@ whether you hit them:
 ## 1.
 
 <!-- Your criterion. It must name a number. -->
-
+Test-set accuracy is at least 0.65 on all three seeds.
 
 
 **Why this target:**
-
+A model that ignores the text and always predicts PHYSICAL_WATER_FLOOD already scores 0.39 (85 of 219 posts), so a target like 0.50 would barely beat guessing. I chose 0.65 to require a clear improvement over that baseline. I didn't aim for 0.80 because the DIGITAL_OR_INFORMATION / COMMERCIAL_OR_PLATFORM_SATURATION boundary was hard even for me to label consistently, and with only about 33 test posts per seed, a few mistakes on those cases would be enough to sink a higher target.
 
 
 ---
@@ -66,11 +66,11 @@ whether you hit them:
 ## 2.
 
 <!-- Your criterion. -->
-
+On all three seeds, per-label F1 on the test set is at least 0.90 for PHYSICAL_WATER_FLOOD, and at least 0.65 for DIGITAL_OR_INFORMATION, COMMERCIAL_OR_PLATFORM_SATURATION, and SOCIAL_OR_ECONOMIC_INFLUX.
 
 
 **Why this target:**
-
+The labels aren't equally easy, so they get different targets. PHYSICAL_WATER_FLOOD is my largest label (85 posts, about 13 per test split), and its posts usually contain obvious words like rain, river, or hurricane, so I expect it to score high. DIGITAL_OR_INFORMATION and COMMERCIAL_OR_PLATFORM_SATURATION share my hardest boundary, AI content and apps, so I set them lower. COMMERCIAL_OR_PLATFORM_SATURATION and SOCIAL_OR_ECONOMIC_INFLUX are also my smallest labels (about 30 posts, only 4–5 per test split), and one wrong prediction can move their F1 by 0.15 or more.
 
 
 ---
@@ -78,11 +78,11 @@ whether you hit them:
 ## 3.
 
 <!-- Your criterion. -->
-
+On all three seeds, no more than 20% of the COMMERCIAL_OR_PLATFORM_SATURATION posts in the test set are predicted as DIGITAL_OR_INFORMATION.
 
 
 **Why this target:**
-
+This is my hardest boundary. With only about 5 COMMERCIAL_OR_PLATFORM_SATURATION posts per test split, each mistake is about 20%, so this allows 1 confusion per seed. I kept it this tight because a looser limit would contradict criterion 2: two confusions would push COMMERCIAL_OR_PLATFORM_SATURATION's recall to about 0.60, which is below its 0.65 F1 target.
 
 
 ---
@@ -90,11 +90,11 @@ whether you hit them:
 ## 4.
 
 <!-- Your criterion. -->
-
+On at least 30 of my flooding posts labeled independently by course staff using my label definitions, my labels match theirs on at least 70%.
 
 
 **Why this target:**
-
+With four labels, two people guessing would agree only about 25% of the time, so 70% shows that my definitions do real work. I expect near-total agreement on PHYSICAL_WATER_FLOOD, because its posts name rain, rivers, or storms. I don't set the bar higher because the DIGITAL_OR_INFORMATION / COMMERCIAL_OR_PLATFORM_SATURATION boundary, especially AI-generated books, music, and apps, was hard even for me, and I had to correct several of those labels myself.
 
 
 ---
@@ -102,11 +102,14 @@ whether you hit them:
 ## 5.
 
 <!-- Your criterion. -->
-
+On all three seeds, accuracy on the most-confident third of test predictions is at least 0.75, and at least 0.20 higher than accuracy on the least-confident third
 
 
 **Why this target:**
+On all three seeds, accuracy on the most-confident third of test predictions is at least 0.75, and at least 0.20 higher than accuracy on the least-confident third.
 
+Why this target:
+My overall accuracy target is 0.65, so the predictions the model is surest about should clearly beat that. 0.75 means its confident guesses are right about three times out of four. The 0.20 gap tests whether confidence means anything at all. If the sure and unsure thirds score about the same, I can't use confidence to decide which predictions to double-check. I expect the confident third to be mostly obvious PHYSICAL_WATER_FLOOD posts, and the unsure third to be DIGITAL_OR_INFORMATION / COMMERCIAL_OR_PLATFORM_SATURATION boundary cases.
 
 
 ---
