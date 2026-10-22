@@ -171,15 +171,40 @@ because people's surge of questions is the boarderline.
 <!-- Your starting model, your settings, and anything you changed and why. -->
 
 **Base model:**
+Model: distilbert-base-uncased
+Device used was device: mps  (Apple Silicon GPU (MPS))
+torch:  2.14.1
 
 **Settings:** <!-- epochs, learning rate, batch size, seed -->
+I did not change these:
+EPOCHS = 3
+LEARNING_RATE = 2e-5
+BATCH_SIZE = 16
+SEED = 42
 
 **Anything I changed from the defaults, and why:**
+No, I did not change anything for the default value.
 
 **Split sizes:** <!-- train / val / test, and per-label counts in the test
 split. If a label had fewer than about 8 in test, say so — it explains a lot
 of next unit's variance. -->
+For training: 
+COMMERCIAL_OR_PLATFORM_SATURATION 22
+DIGITAL_OR_INFORMATION 55
+PHYSICAL_WATER_FLOOD 60
+SOCIAL_OR_ECONOMIC_INFLUX 21
 
+For Validation:
+COMMERCIAL_OR_PLATFORM_SATURATION 5
+DIGITAL_OR_INFORMATION 12
+PHYSICAL_WATER_FLOOD 13
+SOCIAL_OR_ECONOMIC_INFLUX 4
+
+For test
+COMMERCIAL_OR_PLATFORM_SATURATION 5
+DIGITAL_OR_INFORMATION 12
+PHYSICAL_WATER_FLOOD 13
+SOCIAL_OR_ECONOMIC_INFLUX 5
 
 
 ---
