@@ -58,7 +58,7 @@ Test-set accuracy is at least 0.65 on all three seeds.
 
 
 **Why this target:**
-A model that ignores the text and always predicts PHYSICAL_WATER_FLOOD already scores 0.39 (85 of 219 posts), so a target like 0.50 would barely beat guessing. I chose 0.65 to require a clear improvement over that baseline. I didn't aim for 0.80 because the DIGITAL_OR_INFORMATION / COMMERCIAL_OR_PLATFORM_SATURATION boundary was hard even for me to label consistently, and with only about 33 test posts per seed, a few mistakes on those cases would be enough to sink a higher target.
+A model that ignores the text and always predicts PHYSICAL_WATER_FLOOD already scores 0.38 (86 of 227 posts), so a target like 0.50 would barely beat guessing. I chose 0.65 to require a clear improvement over that baseline. I didn't aim for 0.80 because the DIGITAL_OR_INFORMATION / COMMERCIAL_OR_PLATFORM_SATURATION boundary was hard even for me to label consistently, and with only about 33 test posts per seed, a few mistakes on those cases would be enough to sink a higher target.
 
 
 ---
@@ -70,7 +70,7 @@ On all three seeds, per-label F1 on the test set is at least 0.90 for PHYSICAL_W
 
 
 **Why this target:**
-The labels aren't equally easy, so they get different targets. PHYSICAL_WATER_FLOOD is my largest label (85 posts, about 13 per test split), and its posts usually contain obvious words like rain, river, or hurricane, so I expect it to score high. DIGITAL_OR_INFORMATION and COMMERCIAL_OR_PLATFORM_SATURATION share my hardest boundary, AI content and apps, so I set them lower. COMMERCIAL_OR_PLATFORM_SATURATION and SOCIAL_OR_ECONOMIC_INFLUX are also my smallest labels (about 30 posts, only 4–5 per test split), and one wrong prediction can move their F1 by 0.15 or more.
+The labels aren't equally easy, so they get different targets. PHYSICAL_WATER_FLOOD is my largest label (86 posts, about 13 per test split), and its posts usually contain obvious words like rain, river, or hurricane, so I expect it to score high. DIGITAL_OR_INFORMATION and COMMERCIAL_OR_PLATFORM_SATURATION share my hardest boundary, AI content and apps, so I set them lower. COMMERCIAL_OR_PLATFORM_SATURATION and SOCIAL_OR_ECONOMIC_INFLUX are also my smallest labels (about 30 posts, only 4–5 per test split), and one wrong prediction can move their F1 by 0.15 or more.
 
 
 ---

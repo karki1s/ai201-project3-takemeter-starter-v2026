@@ -117,17 +117,21 @@ Those two are the hardest boundary since for example if the post contains someth
      cases. -->
 
 **Where the posts came from:**
+The collection of posts comes from Hacker News using (https://hn.algolia.com/api/v1/search). 
 
 **How I labelled them:** <!-- Cold first? Pre-labelled with AI and corrected?
 Say so plainly — the disclosure is required, not penalised. -->
+
+Actually I went and labelled all the post manually first and then use AI to double check, when there was mismatch I look at it carefully. In majority of cases both AI and my lables matched but In some instant AI was incorrectly labeling it and in some instant I did label incorrectly. I double check it and individual which were different. 
 
 **Counts per label:**
 
 | Label | Count | Share |
 |---|---|---|
-|  |  |  |
-|  |  |  |
-|  |  |  |
+| COMMERCIAL_OR_PLATFORM_SATURATION | 32 | 14.09 |
+| SOCIAL_OR_ECONOMIC_INFLUX | 30 | 13.21 |
+| PHYSICAL_WATER_FLOOD | 86 | 37.88 |
+| DIGITAL_OR_INFORMATION | 79 | 34.81 |
 | **Total** |  | 100% |
 
 **Three hard cases**
@@ -137,25 +141,29 @@ Say so plainly — the disclosure is required, not penalised. -->
 
 **1.**
 > *The post:*
->
+> The dangerous trend of inexperienced individuals flooding the tech market As the demand for technology continues to grow, so does the influx of people entering the tech field. However, this surge in interest has also led to a saturation of the market with individuals who may not have the necessary skills and experience to excel in the field.<p>In recent years, we&#x27;ve seen a rise in the number of people who have no prior experience in technology but claim to be experts in the field after completing a short course in a specific technology. These so-called &quot;experts&quot; are often referred to as &quot;cloud-washed&quot; or &quot;bootcamp graduates&quot; and lack the depth of knowledge and understanding that comes with years of experience.<p>Additionally, we&#x27;re seeing a trend of people calling themselves &quot;data scientists&quot; after completing a three-week course in Python. These individuals may have a basic understanding of the language, but they do not have the necessary skills and experience to truly be considered data scientists.<p>The tech field is not for everyone, and it&#x27;s important for individuals to carefully consider their skills and experience before entering the market. It&#x27;s also crucial for companies to properly vet candidates and ensure that they have the necessary experience and expertise to succeed in their roles.<p>In short, the tech field may be saturated with inexperienced individuals, but that doesn&#x27;t mean it&#x27;s not a worthwhile pursuit for those with the skills and experience to excel. It&#x27;s important to do your research and carefully consider your options before entering the market.
 > *Could have been:*
->
+> COMMERCIAL_OR_PLATFORM_SATURATION
 > *I chose, because:*
-
+SOCIAL_OR_ECONOMIC_INFLUX
+Beside other things it states people entering job market
 **2.**
 > *The post:*
->
+> Stop flooding us with AI-based grant applications, begs NIH 
 > *Could have been:*
->
+> COMMERCIAL_OR_PLATFORM_SATURATION
 > *I chose, because:*
+DIGITAL_OR_INFORMATION
+Because AI-generated volume
 
 **3.**
 > *The post:*
->
+>People are flooding AI chatbots with health questions. Microsoft Mayo Clinic 
 > *Could have been:*
->
+>DIGITAL_OR_INFORMATION
 > *I chose, because:*
-
+SOCIAL_OR_ECONOMIC_INFLUX, 
+because people's surge of questions is the boarderline. 
 ---
 
 ## The Training Run
