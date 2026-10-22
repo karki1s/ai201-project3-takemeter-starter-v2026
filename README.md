@@ -221,8 +221,12 @@ SOCIAL_OR_ECONOMIC_INFLUX 5
 **Moment 1**
 
 - *What I asked for:*
+ I used AI for checking my understanding about the repo and asked aobut the labeling my collected post which I did after I label everything by mymyself.
+ Also I ask rewrite suff by passing my thought around criteria.  
 - *What came back:*
+It did label gint and label my post
 - *What I changed:*
+I verify my and AI's response on the post and revisit in some cases it was wrong and in some cases I was wrong, I corrected my labels. 
 
 **Moment 2**
 
