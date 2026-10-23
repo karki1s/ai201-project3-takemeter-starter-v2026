@@ -1,0 +1,215 @@
+{
+  "model": "facebook/bart-large-mnli",
+  "n": 35,
+  "seed": 42,
+  "held_out": true,
+  "used_definitions": true,
+  "scores": {
+    "n": 35,
+    "accuracy": 0.3142857142857143,
+    "f1_macro": 0.11956521739130435,
+    "per_label": {
+      "COMMERCIAL_OR_PLATFORM_SATURATION": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5
+      },
+      "DIGITAL_OR_INFORMATION": {
+        "precision": 0.3235294117647059,
+        "recall": 0.9166666666666666,
+        "f1": 0.4782608695652174,
+        "support": 12
+      },
+      "PHYSICAL_WATER_FLOOD": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 13
+      },
+      "SOCIAL_OR_ECONOMIC_INFLUX": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5
+      }
+    }
+  },
+  "predictions": [
+    {
+      "text": "CNbots are flooding Twiter with ads to make search for protests tweets difficult ",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Children of the Opioid Epidemic Are Flooding Foster Homes ",
+      "gold": "SOCIAL_OR_ECONOMIC_INFLUX",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "The Problem of Rooftop Solar Panels Flooding California's Grid ",
+      "gold": "COMMERCIAL_OR_PLATFORM_SATURATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Off-lease used cars are flooding market, pushing prices down ",
+      "gold": "COMMERCIAL_OR_PLATFORM_SATURATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "What Caused Flooding in Dubai ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Launch HN: Strata (YC P25) \u2013 One MCP server for AI to handle thousands of tools Hey HN! We are Klavis AI (<a href=\"https:&#x2F;&#x2F;www.klavis.ai&#x2F;\">https:&#x2F;&#x2F;www.klavis.ai&#x2F;</a>) and we&#x27;re launching Strata, one open-source MCP server that helps AI agents use thousands of API tools without getting overwhelmed. Instead of showing all available tools at once, Strata reveals them step-by-step based on what the AI actually needs.<p>As a former Senior SWE on Google Gemini &#x27;s tool use team, I saw firsthand how AI would struggle with tools. If you&#x27;ve built AI agents, you&#x27;ve likely hit the same walls: (1) AI agents struggle to pick the right API from hundreds of options. (2) Tool descriptions and info consume massive token budgets. (3) Most servers cap at 40~50 tools to avoid these problems, limiting what you can build.<p>Instead of flooding the AI with everything upfront, Strata works like a human would. It guides the AI agents to discover relevant categories, then lists available actions in those categories. It relies on LLMs\u2019 reasoning to drill down progressively to find the exact tool needed. Here are some examples:<p><i>Github query: &quot;Find my stale pull requests in our main repo&quot;</i><p>Strata: AI model identifies GitHub \u2192 Shows categories (Repos, Issues, PRs, Actions) \u2192 AI selects PRs \u2192 Shows PR-specific actions -&gt; AI selects list_pull_requests \u2192 Shows  list_pull_requests details -&gt; Executes list_pull_requests with the right parameters.<p><i>Jira query: &quot;Create a bug ticket in the &#x27;MOBILE&#x27; project about the app crashing on startup.&quot;</i><p>Strata: AI identifies Jira \u2192 Shows categories (Projects, Issues, Sprints) \u2192 AI selects Issues \u2192 Shows actions (create_issue, get_issue) \u2192 AI selects create_issue \u2192 Shows create_issue details \u2192 Executes with correct parameters.<p><i>Slack query: &quot;Post a message in the #announcements channel that bonus will be paid out next Friday.&quot;</i><p>Strata: AI identifies Slack \u2192 Shows categories (Channels, Messages, Users) \u2192 AI selects Messages \u2192 Shows actions (send_message, schedule_message) \u2192 AI selects send_message \u2192 Shows send_message details \u2192 Executes with correct parameters.<p>This progressive approach unlocks a huge advantage: depth. While most integrations offer a handful of high-level tools, Strata can expose hundreds of granular features for a single app like GitHub, Jira, etc. Your AI agent can finally access the deep, specific features that real workflows require, without getting lost in a sea of options.<p>Under the hood, Strata manages authentication tokens and includes a built-in search tool for the agent to dig into documentation if it gets stuck.<p>On the MCPMark <a href=\"https:&#x2F;&#x2F;mcpmark.ai&#x2F;leaderboard&#x2F;mcp\" rel=\"nofollow\">https:&#x2F;&#x2F;mcpmark.ai&#x2F;leaderboard&#x2F;mcp</a>, Strata achieves +15.2% higher pass@1 rate vs the official GitHub server and +13.4% higher pass@1 rate vs the official Notion server. In human eval tests, it hits 83%+ accuracy on complex, real-world multi-app workflows.<p>Here is a quick demo to watch Strata navigate a complex workflow with multiple apps, automatically selecting the right tools at each step: <a href=\"https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=N00cY9Ov_fM\" rel=\"nofollow\">https:&#x2F;&#x2F;www.youtube.com&#x2F;watch?v=N00cY9Ov_fM</a>.<p>You can connect to any external MCP Server into Strata, and we have an open source version for it: <a href=\"https:&#x2F;&#x2F;github.com&#x2F;Klavis-AI&#x2F;klavis\" rel=\"nofollow\">https:&#x2F;&#x2F;github.com&#x2F;Klavis-AI&#x2F;klavis</a>.<p>For team or production use with more features, visit our website: <a href=\"https:&#x2F;&#x2F;www.klavis.ai\">https:&#x2F;&#x2F;www.klavis.ai</a>. Add Strata to Cursor, VS Code or any MCP-compatible application with one click. You can also use our API to easily plug in Strata to your AI application.<p>We look forward to your comments. Thanks for reading!",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "PHYSICAL_WATER_FLOOD"
+    },
+    {
+      "text": "Ask HN: How Would You Architect Around Potential AWS Failures? With the AWS outages over the last few days, I've been wondering how you would set up a system using only AWS services that would be resistant to multi-availability zone outages across multiple services within a geographical region.  Assume that the system that we are setting up is an API that will have heavy read/write traffic with a significant number of users, and that the startup running it is on a typical shoestring budget that makes AWS attractive.<p>What got a lot of startups in trouble was architecting systems that were fault-tolerant across availability zones within the US-East region, but when one availability zone went down, everybody's apps started flooding the other availability zones, causing more problems.  A typical setup might have been an Elastic Load Balancer with EC2 instances in a few availability zones (with the ability to create new instances in other availability zones in response to outages), multi-AZ RDS database servers, and S3 backups to multiple AZ's.<p>What I'm looking for is ideas for taking this setup and expanding it to multiple geographical regions, using only AWS services.  Would you have multiple stacks and use Route 53 DNS to route users to different regions?  How would you keep databases in sync across regions?  Would you use one region as a primary and periodically back up to",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Californians are flooding Mexico City. Some locals want them to go home ",
+      "gold": "SOCIAL_OR_ECONOMIC_INFLUX",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "China is flooding Taiwan with disinformation ",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Billions in private cash is flooding into fusion power. Will it pay off? ",
+      "gold": "SOCIAL_OR_ECONOMIC_INFLUX",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Flooding, evacuations as Pacific Storm pounds Southern California ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Group accused of flooding Ticketmaster with fake accounts to buy 321K tickets",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Journalists receive death threats over reporting on China flooding ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Elon Musk Themed Crypto Scams Flooding YouTube Today ",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Vibe-coded war dashboards are flooding social media ",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "AI Slop flooding maths YouTube [video] ",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Why China is flooding Europe with EVs ",
+      "gold": "COMMERCIAL_OR_PLATFORM_SATURATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "YouTube now flooding your ad-block with \"fake\" ads that slow the browser ",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "California\u2019s \u2018Big Melt\u2019 has begun and could bring perilous flooding with it ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "'Vibecoded' Apps Are Flooding the App Store. Is That Good for Apple? ",
+      "gold": "COMMERCIAL_OR_PLATFORM_SATURATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Cheating VoIP Security by Flooding the SIP ",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "TikTok's Broken SEO Is Flooding Search Engines ",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "NASA Study Projects a Surge in Coastal Flooding, Starting in 2030s",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Severe flooding seeeps cars away in Belgium ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "AI-Generated Junk Is Flooding Etsy ",
+      "gold": "COMMERCIAL_OR_PLATFORM_SATURATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Chicago\u2019s Deep Tunnel: The solution to urban flooding, or a cautionary tale? ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Heat waves and flooding: Why U.S. infrastructure can't withstand extreme weather ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Flooding of US Coast, Caused by Global Warming, Has Begun ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Dangerous flash flooding is happening in Texas and Louisiana, more rain coming ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Flooding or marijuana? Two theories for falling cash demand ",
+      "gold": "SOCIAL_OR_ECONOMIC_INFLUX",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Ask PG: Did \"Startup Ideas\" lead to flooding the YC apps with these ideas? That is, did the article directly lead to people applying with ideas for businesses off of the list?",
+      "gold": "SOCIAL_OR_ECONOMIC_INFLUX",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Trees cocooned in spiders webs after flooding ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "AI-generated books are flooding Amazon: they're as reliable as you would guess ",
+      "gold": "DIGITAL_OR_INFORMATION",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "Owner fills restaurant with fresh water to beat Kentucky flooding ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    },
+    {
+      "text": "The summer of flooding across the US, and scientists know why ",
+      "gold": "PHYSICAL_WATER_FLOOD",
+      "predicted": "DIGITAL_OR_INFORMATION"
+    }
+  ]
+}

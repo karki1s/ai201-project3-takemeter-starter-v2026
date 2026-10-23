@@ -8,3 +8,8 @@
 analysis: makes an argument backed by a specific, checkable fact
 hot_take: a confident claim with no support offered
 reaction: an immediate response to something that just happened
+
+PHYSICAL_WATER_FLOOD: A post describing water overflowing, covering, or inundating land or places, usually because of heavy rainfall, rivers, storms, coastal surges, or other water-related events. Includes actual flooding, flood warnings, and predictions of flooding.
+COMMERCIAL_OR_PLATFORM_SATURATION: A post describing a large quantity of products, advertisements, listings, or commercial content entering a marketplace or online platform, potentially overwhelming users, reducing quality, or making it difficult to find legitimate products.
+SOCIAL_OR_ECONOMIC_INFLUX: A post describing a large or sudden increase in people, workers, migrants, investors, money, applications, or other social or economic activity entering a place, organization, or system, often with an emphasis on its effects or perceived burden.
+DIGITAL_OR_INFORMATION: A post describing a large or overwhelming amount of digital content or information being distributed, such as disinformation, misinformation, spam, bots, fake news, or online messages. The term “flooding” is used metaphorically to describe the spread or volume of information.
