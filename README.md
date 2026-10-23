@@ -276,7 +276,7 @@ Yes, I think trained model's will beat this baseline, as we expected using the e
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
      nothing — and that is a real finding, not a failure. Say it plainly. -->
-
+Fine-tuning is better than the baseline, but only for the two labels with lots of training data. The two rare labels still score 0 because the model never predicts them.
 
 
 ---
