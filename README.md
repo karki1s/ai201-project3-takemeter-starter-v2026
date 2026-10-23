@@ -244,20 +244,34 @@ I verify my and AI's response on the post and revisit in some cases it was wrong
 ---
 
 ## Baseline vs. Trained
+> Result form python baseline.py
+| Measure | Baseline |
+|---|---|
+| Overall accuracy | 0.314 |
+| Macro F1 | 0.120 |
+| F1 — `COMMERCIAL_OR_PLATFORM_SATURATION` | 0.000 |
+| F1 — `DIGITAL_OR_INFORMATION` | 0.478 |
+| F1 — `PHYSICAL_WATER_FLOOD` | 0.000 |
+| F1 — `SOCIAL_OR_ECONOMIC_INFLUX` | 0.000 |
 
 <!-- Both models on the same posts. `python baseline.py --trained results.json`
      prints this table for you. -->
+> python baseline.py --trained results.json
 
 | Measure | Baseline | Trained | Difference |
 |---|---|---|---|
-| Overall accuracy |  |  |  |
-| Macro F1 |  |  |  |
-| F1 — `label_one` |  |  |  |
-| F1 — `label_two` |  |  |  |
+| Overall accuracy | 0.314 | 0.686 | +0.371 |
+| Macro F1 | 0.120 | 0.400 | +0.280 |
+| F1 — `COMMERCIAL_OR_PLATFORM_SATURATION` | 0.000 | 0.000 | +0.000 |
+| F1 — `DIGITAL_OR_INFORMATION` | 0.478 | 0.786 | +0.307 |
+| F1 — `PHYSICAL_WATER_FLOOD` | 0.000 | 0.812 | +0.812 |
+| F1 — `SOCIAL_OR_ECONOMIC_INFLUX` | 0.000 | 0.000 | +0.000 |
+
 
 **What I predicted before I looked:**
 <!-- Milestone 1 asks you to write this BEFORE seeing the trained numbers. A
      prediction made afterwards isn't one. -->
+Yes, I think trained model's will beat this baseline, as we expected using the example doing the finetunning will in most cases do better.
 
 **What the gap actually means:**
 <!-- If the baseline matched your trained model, your fine-tuning added
