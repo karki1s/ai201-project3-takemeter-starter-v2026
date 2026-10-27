@@ -286,29 +286,41 @@ Fine-tuning is better than the baseline, but only for the two labels with lots o
 <!-- Five criteria across three seeds. The notebook's section 6 prints the
      spread table; the Target and Verdict columns are yours. -->
 
+I am making my label shortcut to fit here
+COMMERCIAL_OR_PLATFORM_SATURATION: COMM
+DIGITAL_OR_INFORMATION: DIG
+PHYSICAL_WATER_FLOOD: PHYS
+SOCIAL_OR_ECONOMIC_INFLUX: SOC
+
+
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 on all seeds | 0.686 | 0.714 | 0.686 | Met |
+| 2. Per-label F1 | PHYS ≥ 0.90; DIG, COMM, SOC ≥ 0.65 | PHYS 0.812 · DIG 0.786 · COMM 0.000 · SOC 0.000 | PHYS 0.867 · DIG 0.800 · COMM 0.000 · SOC 0.000 | PHYS 0.812 · DIG 0.786 · COMM 0.000 · SOC 0.000 | Missed |
+| 3. COMM → DIG confusion | ≤ 20% of COMM posts | 3/5 = 60% | 3/5 = 60% | 4/5 = 80% | Missed |
+| 4. Agreement with another person | ≥ 70% on 30 posts | 80% |  | — | Met |
+| 5. Confidence | Top third ≥ 0.75 and ≥ 0.20 above bottom third | 1.000 vs 0.364 (gap 0.636) | 0.909 vs 0.273 (gap 0.636) | 1.000 vs 0.182 (gap 0.818) | Met |
 
 ### Confusion matrix
 
 <!-- ⚠️ TYPED AS A MARKDOWN TABLE. The notebook prints one ready to paste.
      An image of a matrix earns nothing. -->
 
-| true \ predicted |  |  |  |
-|---|---|---|---|
-| **** |  |  |  |
-| **** |  |  |  |
-| **** |  |  |  |
+| true \ predicted | COMMERCIAL_OR_PLATFORM_SATURATION | DIGITAL_OR_INFORMATION | PHYSICAL_WATER_FLOOD | SOCIAL_OR_ECONOMIC_INFLUX |
+|---|---|---|---|---|
+| COMMERCIAL_OR_PLATFORM_SATURATION | 0 | 3 | 2 | 0 |
+| DIGITAL_OR_INFORMATION | 0 | 11 | 1 | 0 |
+| PHYSICAL_WATER_FLOOD | 0 | 0 | 13 | 0 |
+| SOCIAL_OR_ECONOMIC_INFLUX | 0 | 2 | 3 | 0 |
 
 **My biggest off-diagonal number, and what it means:**
 <!-- Not "the model made mistakes" — WHICH boundary it didn't learn, and which
      direction. "7 real analysis posts were called hot_take and only 3 went the
      other way" is a direction, not just an error rate. -->
+
+
+3 real COMMERCIAL_OR_PLATFORM_SATURATION posts were called DIGITAL_OR_INFORMATION, and 0 went the other way (seed 42). A close second is SOCIAL_OR_ECONOMIC_INFLUX → PHYSICAL_WATER_FLOOD (3, 2 and 4 across seeds, 0 in reverse). The direction matters. The model hasn't learned a COMMERCIAL/DIGITAL boundary at all. It treats COMMERCIAL_OR_PLATFORM_SATURATION as a subset of DIGITAL because both are about apps, platforms and AI content, and DIGITAL has 2.5× more training examples. When a post sits near that line, the model picks the bigger label every time. Likewise, SOCIAL posts ("migrants flooding a city", "children flooding foster homes") are pulled into PHYSICAL, probably by place and crowd words that sound like literal floods. So the errors are one-way: the two small labels get absorbed into their bigger neighbours.
+This is also the boundary I flagged as hardest to label myself. I ask one of my friend to label 30 example he score 80% of time and those 20% where also on the same borderline. 
 
 
 
