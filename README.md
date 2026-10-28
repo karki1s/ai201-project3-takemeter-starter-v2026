@@ -333,11 +333,11 @@ This is also the boundary I flagged as hardest to label myself. I ask one of my 
 
 | # | Criterion | Target | Verdict | How I decided |
 |---|---|---|---|---|
-| 1 |  |  |  |  |
-| 2 |  |  |  |  |
-| 3 |  |  |  |  |
-| 4 |  |  |  |  |
-| 5 |  |  |  |  |
+| 1 | Overall accuracy | ≥ 0.65 on all 3 seeds | MET | 0.686 / 0.714 / 0.686, all above 0.65 |
+| 2 | Per-label F1 | PHYS ≥ 0.90; DIG, COMM, SOC ≥ 0.65 | MISSED | DIG met (0.786–0.800). PHYS 0.812–0.867 < 0.90. COMM and SOC 0.000 on every seed |
+| 3 | COMM → DIG confusion | ≤ 20% of COMM posts | MISSED | 3/5, 3/5, 4/5 = 60%, 60%, 80% |
+| 4 | Labelling agreement | ≥ 70% | MET (revised criterion) | 28/30 = 93% on the staff set, see revision in criteria.md |
+| 5 | Confidence | Top third ≥ 0.75 and ≥ 0.20 above bottom third | MET | Top 1.000 / 0.909 / 1.000; gaps 0.636 / 0.636 / 0.818 |
 
 **Diagnoses**
 
@@ -350,6 +350,12 @@ This is also the boundary I flagged as hardest to label myself. I ask one of my 
      have that can tell a LABELLING problem from a MODEL problem, and this
      section is graded on whether you used it that way. -->
 
+Criterion 2 (per-label F1): too few examples, plus undertraining.COMM and SOC have 22 and 21 training posts against 55–60 for the big two, and
+only 5 test posts each. The model never predicts either label on any seed, so
+the 0.000s aren't split noise. It is also undertrained: 158 posts ÷ batch 16 ×
+3 epochs ≈ 30 updates, and its mean confidence when right is only 0.40–0.47
+(chance is 0.25). PHYS misses 0.90 only on precision. Its recall is 13/13 on
+every seed, but the rare-label posts get dumped into it.
 
 
 ---
@@ -362,7 +368,7 @@ This is also the boundary I flagged as hardest to label myself. I ask one of my 
      data/staff_taxonomy.md, not your own — so every argument below is made
      from those definitions and those decision rules. -->
 
-**Agreement rate:** ___ / 30 = ___%
+**Agreement rate:** 28 / 30 = 93%
 
 <!-- Nobody grades this number. A 60% who argues every disagreement from the
      stated rules beats a 95% who wrote "staff was right" nine times. Several
@@ -386,25 +392,25 @@ This is also the boundary I flagged as hardest to label myself. I ask one of my 
 
 **1.**
 > *The post:*
->
+> Three of us ran the same session on the same day, different shoes, within 10 seconds of each other over 5 miles. I'm not saying shoes do nothing, but whatever they do was smaller than the noise between three people.
 > *Staff said / I said:*
->
+>analysis/hot_take
 > *My call, and why:*
->
+> Three runners, different shoes, within 10 seconds over 5 miles is a named comparison, and the conclusion rests on it. Under rule 1 the fact is load-bearing. Because of the last sentences I selected hot_take but after reviewing I agree that this post should be analysis. 
 > *Which pile:*
-
+Pile a 
 **2.**
 > *The post:*
->
+>Just realised the shoes I set every PB in this year are the ones I bought by accident in the wrong size.
 > *Staff said / I said:*
->
+> reaction / hot_take
 > *My call, and why:*
->
+>It reports what just happened to the writer, and it doesn't make a general claim about shoes. 
+
 > *Which pile:*
-
+Pile c
 **What the pattern in my disagreements tells me:**
-
-
+I selected hot_take on short, recent posts even when there's a fact or a personal moment underneath.
 
 ---
 
