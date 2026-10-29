@@ -1,0 +1,209 @@
+[
+  {
+    "seed": 42,
+    "n_test": 35,
+    "accuracy": 0.9142857142857143,
+    "f1_macro": 0.8812321937321937,
+    "per_label": {
+      "COMMERCIAL_OR_PLATFORM_SATURATION": {
+        "precision": 1.0,
+        "recall": 0.8,
+        "f1": 0.8888888888888888,
+        "support": 5
+      },
+      "DIGITAL_OR_INFORMATION": {
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "f1": 0.9230769230769231,
+        "support": 12
+      },
+      "PHYSICAL_WATER_FLOOD": {
+        "precision": 0.9285714285714286,
+        "recall": 1.0,
+        "f1": 0.9629629629629629,
+        "support": 13
+      },
+      "SOCIAL_OR_ECONOMIC_INFLUX": {
+        "precision": 1.0,
+        "recall": 0.6,
+        "f1": 0.75,
+        "support": 5
+      }
+    },
+    "confusion": {
+      "COMMERCIAL_OR_PLATFORM_SATURATION": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 4,
+        "DIGITAL_OR_INFORMATION": 1,
+        "PHYSICAL_WATER_FLOOD": 0,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 0
+      },
+      "DIGITAL_OR_INFORMATION": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 0,
+        "DIGITAL_OR_INFORMATION": 12,
+        "PHYSICAL_WATER_FLOOD": 0,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 0
+      },
+      "PHYSICAL_WATER_FLOOD": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 0,
+        "DIGITAL_OR_INFORMATION": 0,
+        "PHYSICAL_WATER_FLOOD": 13,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 0
+      },
+      "SOCIAL_OR_ECONOMIC_INFLUX": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 0,
+        "DIGITAL_OR_INFORMATION": 1,
+        "PHYSICAL_WATER_FLOOD": 1,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 3
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.7062921524047852,
+      "mean_when_wrong": 0.7076629996299744,
+      "accuracy_most_confident_third": 1.0,
+      "accuracy_least_confident_third": 0.9090909090909091,
+      "n_per_third": 11
+    },
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.14.1",
+    "max_length": 128
+  },
+  {
+    "seed": 7,
+    "n_test": 35,
+    "accuracy": 0.9142857142857143,
+    "f1_macro": 0.8508991008991009,
+    "per_label": {
+      "COMMERCIAL_OR_PLATFORM_SATURATION": {
+        "precision": 1.0,
+        "recall": 0.4,
+        "f1": 0.5714285714285714,
+        "support": 5
+      },
+      "DIGITAL_OR_INFORMATION": {
+        "precision": 0.8571428571428571,
+        "recall": 1.0,
+        "f1": 0.9230769230769231,
+        "support": 12
+      },
+      "PHYSICAL_WATER_FLOOD": {
+        "precision": 1.0,
+        "recall": 1.0,
+        "f1": 1.0,
+        "support": 13
+      },
+      "SOCIAL_OR_ECONOMIC_INFLUX": {
+        "precision": 0.8333333333333334,
+        "recall": 1.0,
+        "f1": 0.9090909090909091,
+        "support": 5
+      }
+    },
+    "confusion": {
+      "COMMERCIAL_OR_PLATFORM_SATURATION": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 2,
+        "DIGITAL_OR_INFORMATION": 2,
+        "PHYSICAL_WATER_FLOOD": 0,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 1
+      },
+      "DIGITAL_OR_INFORMATION": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 0,
+        "DIGITAL_OR_INFORMATION": 12,
+        "PHYSICAL_WATER_FLOOD": 0,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 0
+      },
+      "PHYSICAL_WATER_FLOOD": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 0,
+        "DIGITAL_OR_INFORMATION": 0,
+        "PHYSICAL_WATER_FLOOD": 13,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 0
+      },
+      "SOCIAL_OR_ECONOMIC_INFLUX": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 0,
+        "DIGITAL_OR_INFORMATION": 0,
+        "PHYSICAL_WATER_FLOOD": 0,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 5
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.7478275299072266,
+      "mean_when_wrong": 0.5748538374900818,
+      "accuracy_most_confident_third": 1.0,
+      "accuracy_least_confident_third": 0.8181818181818182,
+      "n_per_third": 11
+    },
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.14.1",
+    "max_length": 128
+  },
+  {
+    "seed": 2024,
+    "n_test": 35,
+    "accuracy": 0.8,
+    "f1_macro": 0.605026455026455,
+    "per_label": {
+      "COMMERCIAL_OR_PLATFORM_SATURATION": {
+        "precision": 0.0,
+        "recall": 0.0,
+        "f1": 0.0,
+        "support": 5
+      },
+      "DIGITAL_OR_INFORMATION": {
+        "precision": 0.75,
+        "recall": 1.0,
+        "f1": 0.8571428571428571,
+        "support": 12
+      },
+      "PHYSICAL_WATER_FLOOD": {
+        "precision": 0.9285714285714286,
+        "recall": 1.0,
+        "f1": 0.9629629629629629,
+        "support": 13
+      },
+      "SOCIAL_OR_ECONOMIC_INFLUX": {
+        "precision": 0.6,
+        "recall": 0.6,
+        "f1": 0.6,
+        "support": 5
+      }
+    },
+    "confusion": {
+      "COMMERCIAL_OR_PLATFORM_SATURATION": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 0,
+        "DIGITAL_OR_INFORMATION": 3,
+        "PHYSICAL_WATER_FLOOD": 0,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 2
+      },
+      "DIGITAL_OR_INFORMATION": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 0,
+        "DIGITAL_OR_INFORMATION": 12,
+        "PHYSICAL_WATER_FLOOD": 0,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 0
+      },
+      "PHYSICAL_WATER_FLOOD": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 0,
+        "DIGITAL_OR_INFORMATION": 0,
+        "PHYSICAL_WATER_FLOOD": 13,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 0
+      },
+      "SOCIAL_OR_ECONOMIC_INFLUX": {
+        "COMMERCIAL_OR_PLATFORM_SATURATION": 0,
+        "DIGITAL_OR_INFORMATION": 1,
+        "PHYSICAL_WATER_FLOOD": 1,
+        "SOCIAL_OR_ECONOMIC_INFLUX": 3
+      }
+    },
+    "confidence": {
+      "mean_when_right": 0.7865680456161499,
+      "mean_when_wrong": 0.5089829564094543,
+      "accuracy_most_confident_third": 1.0,
+      "accuracy_least_confident_third": 0.45454545454545453,
+      "n_per_third": 11
+    },
+    "device": "mps",
+    "device_name": "Apple Silicon GPU (MPS)",
+    "torch_version": "2.14.1",
+    "max_length": 128
+  }
+]

@@ -231,9 +231,11 @@ I verify my and AI's response on the post and revisit in some cases it was wrong
 **Moment 2**
 
 - *What I asked for:*
+I ask AI to verify my understing on alot of output and reword some of the items in my readme.
 - *What came back:*
+It help me understand the score my training was providing and also rewrite what I summarize. 
 - *What I changed:*
-
+Verify what it presented and modify some of my summary in the readme. 
 **Pre-labelling disclosure:**
 
 <!-- ═══════════════════════ UNIT 6 — THE TEST ═══════════════════════
@@ -417,25 +419,30 @@ I selected hot_take on short, recent posts even when there's a fact or a persona
 ## The Improvement
 
 **What I changed:**
+I changed the epochs from 3 to 10.
 
 **Which diagnosis pointed at it:**
-
+With 3 epoch I had about 30 updates with 10 epocs it will roughly give me 100 updates, which is think model will start picking up two labels that were not picked up before COMMERCIAL_OR_PLATFORM_SATURATION and SOCIAL_OR_ECONOMIC_INFLUX
 ### Run Log — After
 
 | Criterion | Target | Seed 42 | Seed 7 | Seed 2024 | Verdict |
 |---|---|---|---|---|---|
-| 1.  |  |  |  |  |  |
-| 2.  |  |  |  |  |  |
-| 3.  |  |  |  |  |  |
-| 4.  |  |  |  |  |  |
-| 5.  |  |  |  |  |  |
+| 1. Overall accuracy | ≥ 0.65 on all seeds | 0.914 | 0.914 | 0.800 | MET |
+| 2. Per-label F1 | PHYS ≥ 0.90; DIG, COMM, SOC ≥ 0.65 | PHYS 0.963 · DIG 0.923 · COMM 0.889 · SOC 0.750 | PHYS 1.000 · DIG 0.923 · COMM 0.571 · SOC 0.909 | PHYS 0.963 · DIG 0.857 · COMM 0.000 · SOC 0.600 | MISSED |
+| 3. COMM → DIG confusion | ≤ 20% of COMM posts | 1/5 = 20% | 2/5 = 40% | 3/5 = 60% | MISSED |
+| 4. Labelling agreement | ≥ 70% | — | — | — | MET |
+| 5. Confidence | Top third ≥ 0.75 and ≥ 0.20 above bottom third | 1.000 vs 0.909 (gap 0.091) | 1.000 vs 0.818 (gap 0.182) | 1.000 vs 0.455 (gap 0.545) | MISSED |
 
 **Did it help, and how do I know:**
 
 <!-- If it didn't, say so. Relabelling that didn't help is a genuinely
      interesting result and earns full credit. -->
 
-
+The undertraining diagnosis was right. COMM and SOC went from 0 on every seed to above 0 on almost every seed, and accuracy broke through the ~0.71 ceiling. The model's average confidence when right went from 0.40–0.47 to 0.71–0.79. PHYSICAL now meets its 0.90 target too.
+But for criteria 2 and 3 still miss, and seed 2024 is the reason. That seed's COMM F1 is 0.000, with 3 of 5 COMM posts called DIGITAL. Seed 42 shows the model can learn the COMM/DIG boundary. With only 5 COMM test posts per split, though, it isn't stable. The spread across seeds is now large: COMM F1 runs 0.000–0.889, and accuracy moves 0.114, over the 10-point warning line. More training didn't fix the shortage of COMM data. It exposed it.
+Criterion 5 went from MET to MISSED, but not because confidence got worse. The top third was already at 1.000, so the gap can only grow by the bottom third getting worse. The model got better, the bottom third went up to 0.818–0.909, and the gap shrank. Say that plainly. This criterion stops working once the model is accurate, so the miss reflects how the criterion was built more than the model. Don't change the target to rescue it. That counts as lowering a missed number.
+For "What's Still Broken": the COMM/DIG boundary (seed 2024) and COMM/SOC instability, because there are too few examples. 
+The fix would be more COMMERCIAL posts example, not more epochs.
 
 ---
 
@@ -443,11 +450,13 @@ I selected hot_take on short, recent posts even when there's a fact or a persona
 
 <!-- For each criterion still missed: what you'd do, and why you stopped. -->
 
+COMMERCIAL misses on seeds 7 and 2024, SOCIAL on seed 2024. Both labels have only about 30 posts, which leaves 5 per test split, so one wrong post moves F1 by about 0.15–0.20. That's why COMMERCIAL ranges from 0.889 on seed 42 to 0.000 on seed 2024. Next I'd collect about 30 more COMMERCIAL and SOCIAL posts each, so every split has 8–10 test examples of them. More epochs already fixed the undertraining, and what's left is a I believe is data problem, not a training-length problem. So collecting more data for COMMERCIAL and SOCIAL will make our model learn better. 
 
 
 **The gap between what I meant my labels to capture and what the model
 learned:**
 <!-- Two sentences. Your confusion matrix is the evidence. -->
+I meant COMMERCIAL_OR_PLATFORM_SATURATION to capture products and listings overwhelming a marketplace, whatever the medium. The model learned it as "digital content, but rarer": 6 of 15 COMMERCIAL test posts were called DIGITAL_OR_INFORMATION and none went the other way, so it keys on words like apps, AI and platforms instead of whether something is being sold.
 
 
 
